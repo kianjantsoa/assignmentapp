@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AssignmentsService } from 'src/app/shared/assignments.service';
-import { MatieresService } from 'src/app/shared/matieres.service';
+import { AssignmentsService } from '../../Shared/assignments.service';
+import { MatieresService } from '../../Shared/matieres.service';
 import { Assignment } from '../assignment.model';
 import { Matiere } from '../matiere.model';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -59,7 +59,7 @@ export class AddAssignmentComponent implements OnInit {
     newAssignment.matiere = this.selectedMatiere.id;
 
     this.assignmentsService.addAssignment(newAssignment)
-      .subscribe(reponse => {
+      .subscribe((reponse) => {
         console.log(reponse.message);
 
         // il va falloir naviguer (demander au router) d'afficher à nouveau la liste

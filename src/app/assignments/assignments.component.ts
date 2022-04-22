@@ -1,6 +1,6 @@
 import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AssignmentsService } from '../shared/assignments.service';
+import { AssignmentsService } from '../Shared/assignments.service';
 import { Assignment } from './assignment.model';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { filter, map, pairwise, tap, throttleTime } from 'rxjs';
@@ -41,28 +41,28 @@ export class AssignmentsComponent implements OnInit {
   @ViewChild('scrollerNonRendu') scrollerNonRendu!: CdkVirtualScrollViewport;
   ngAfterViewInit():void{
     this.scroller.elementScrolled().pipe(
-      tap(event => {
-        //console.log(event);
+      tap((event:any) => {
+        console.log(event);
       }),
       map(event => {
         return this.scroller.measureScrollOffset('bottom');
       }),
-      tap(val => {
+      tap((val:any) => {
         //console.log("distance par rapport à la fin = " + val)
       }),
       pairwise(),
-      tap(val => {
+      tap((val:any) => {
         /*
         if(val[0] < val[1]) console.log("on monte")
         else console.log("on descend")
         */
       }),
       filter(([y1, y2]) => (y2 < y1 && y2 < 140)),
-      tap(val => {
+      tap((val:any) => {
         //console.log("val")
       }),
       throttleTime(200),
-      tap(val => {
+      tap((val:any) => {
         //console.log(val);
       })
     ).subscribe(() => {
@@ -79,28 +79,28 @@ export class AssignmentsComponent implements OnInit {
     })
 
     this.scrollerNonRendu.elementScrolled().pipe(
-      tap(event => {
+      tap((event:any) => {
         //console.log(event);
       }),
       map(event => {
         return this.scrollerNonRendu.measureScrollOffset('bottom');
       }),
-      tap(val => {
+      tap((val:any) => {
         //console.log("distance par rapport à la fin = " + val)
       }),
       pairwise(),
-      tap(val => {
+      tap((val:any) => {
         /*
         if(val[0] < val[1]) console.log("on monte")
         else console.log("on descend")
         */
       }),
       filter(([y1, y2]) => (y2 < y1 && y2 < 140)),
-      tap(val => {
+      tap((val:any) => {
        // console.log(val)
       }),
       throttleTime(200),
-      tap(val => {
+      tap((val:any) => {
         //console.log(val);
        // console.log("next page:"+ this.hasNextPage)
       })
@@ -138,7 +138,7 @@ export class AssignmentsComponent implements OnInit {
 
   getAssignments(){
     this.assignmentsService.getAssignments(this.page, this.limit)
-    .subscribe(reponse => {
+    .subscribe((reponse :any) => {
       console.log("données arrivées");
       /*this.assignments = assignments;
       console.log(this.assignments)

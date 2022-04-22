@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Assignment } from '../assignments/assignment.model';
-import { LoggingService } from './logging.service';
-import {data} from './data';
+import { LoggingService } from '../Shared/logging.service';
+import {data} from '../Shared/data';
 
 @Injectable({
   providedIn: 'root'
@@ -69,7 +69,7 @@ export class AssignmentsService {
     //return of("Assignment supprimé");
     return this.http.delete(this.url + "/" + assignment._id);
   }
-
+/*
   peuplerBD(){
     data.forEach(element => {
       let newAssignment = new Assignment();
@@ -85,5 +85,5 @@ export class AssignmentsService {
       })
     });
   }
-
+*/
 }
