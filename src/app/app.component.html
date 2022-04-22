@@ -1,0 +1,32 @@
+<mat-toolbar color="primary"  >
+  <span>Assignment app</span>
+  <span class="example-spacer"></span>
+  <a routerLink="/add" class="ajouterBtn">
+  <button mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+        mat-raised-button
+        matTooltip="Ajouter Assignment">
+    <mat-icon>add</mat-icon>
+  </button>
+  </a>
+  <button (click)="logout()" mat-icon-button style="margin: 5px;"
+        class="example-icon favorite-icon danger"
+        aria-label="Example icon-button with heart icon"
+        mat-raised-button
+        color="warn"
+        matTooltip="Déconnexion">
+        <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+<!--
+<div class="container">
+  <h1>
+    <nav>
+      <a routerLink="/home">{{titre}}</a>
+    </nav>
+  </h1>
+  <mat-slide-toggle (click)="onLoginLogout()">Login</mat-slide-toggle>
+</div>
+-->
+<router-outlet></router-outlet>
