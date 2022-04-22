@@ -18,8 +18,8 @@ export class AssignmentsService {
   }
 
 
-  url = "http://localhost:8010/api/assignments";
-
+  //url = "http://localhost:8010/api/assignments";
+  url = "https://mbdsangularprojectbackend.herokuapp.com/api/assignments"
   getAssignments(page:number, limit:number): Observable<any> {
     // en réalité, bientôt au lieu de renvoyer un tableau codé en dur,
     // on va envoyer une requête à un Web Service sur le cloud, qui mettra un

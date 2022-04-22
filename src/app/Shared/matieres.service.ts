@@ -9,8 +9,8 @@ import { Matiere } from '../assignments/matiere.model';
 export class MatieresService {
 
   constructor(private http:HttpClient) { }
-  url = "http://localhost:8010/api/matiere";
-
+  //url = "http://localhost:8010/api/matiere";
+url = "https://mbdsangularprojectbackend.herokuapp.com/api/matiere";
   getMatiere():Observable<Matiere[]>{
     return this.http.get<Matiere[]>(this.url);
   }
