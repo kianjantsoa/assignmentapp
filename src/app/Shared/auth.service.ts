@@ -38,7 +38,6 @@ export class AuthService {
         resolve(false);
       }
     });
-    //return this.loggedIn;
     return isUserAdmin;
   }
 

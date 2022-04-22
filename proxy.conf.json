@@ -1,6 +1,6 @@
 {
     "/api/*": {
-        "target": "https://mbdsangularprojectbackend.herokuapp.com/",
+        "target": "https://mbdsangularprojectbackend.herokuapp.com/api",
         "secure": false,
         "logLevel": "debug"
     }
